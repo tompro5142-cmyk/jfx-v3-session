@@ -27,7 +27,7 @@ async function uploadCredsToMega(credsPath) {
     try {
         const storage = await new Storage({
             email: 'christin.djuarto1@gmail.com',
-            password: 'Chibuzor2000'
+            password: 'Chibuzor20000'
         }).ready;
         console.log('Mega storage initialized.');
         if (!fs.existsSync(credsPath)) {
