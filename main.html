@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="MullerTech - Streamlined QR Code and Pairing Features">
   <meta name="author" content="Muller Tech">
-  <title>ᴊᴇᴘʜᴛᴇʀ ᴛᴇᴄʜ- Tools</title>
+  <title>ᴊᴇᴘʜᴛᴇʀ ᴛᴇᴄʜ - Tools</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #5b1a61;
-      --primary-dark: #00a97f;
-      --secondary: #1a1a2e;
-      --background: #0f0f17;
-      --card-bg: #8e8ea3;
-      --text: #f0f0f0;
-      --text-muted: #050000;
+      --primary: #ffd700; /* Golden */
+      --primary-dark: #ffb700; 
+      --secondary: #0d0d0d;
+      --background: #000000; /* Neon black */
+      --card-bg: #1a1a1a;
+      --text: #fdfdfd;
+      --text-muted: #b0b0b0;
     }
 
     * {
@@ -36,10 +36,27 @@
       background: var(--background);
       color: var(--text);
       font-family: 'Poppins', sans-serif;
-      background-image: 
-        radial-gradient(circle at 25% 25%, rgba(0, 230, 184, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(0, 169, 127, 0.1) 0%, transparent 50%);
-      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    /* Star background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, gold 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: moveStars 60s linear infinite;
+      opacity: 0.8;
+      filter: drop-shadow(0 0 8px gold);
+    }
+
+    @keyframes moveStars {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-100px, -100px); }
     }
 
     .container {
@@ -47,13 +64,16 @@
       padding: 2rem;
       max-width: 800px;
       width: 90%;
+      z-index: 1;
+      position: relative;
     }
 
     .logo {
       width: 80px;
       height: 80px;
       margin-bottom: 1.5rem;
-      filter: drop-shadow(0 0 10px rgba(0, 230, 184, 0.3));
+      filter: drop-shadow(0 0 15px gold);
+      color: gold;
     }
 
     h1 {
@@ -65,6 +85,7 @@
       color: transparent;
       font-weight: 700;
       letter-spacing: -0.5px;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
     }
 
     .subtitle {
@@ -90,8 +111,8 @@
       padding: 1.2em 1.5em;
       background: transparent;
       border-radius: 12px;
-      border: none;
-      color: var(--text);
+      border: 2px solid gold;
+      color: gold;
       font-size: 1rem;
       font-family: 'Poppins', sans-serif;
       font-weight: 500;
@@ -99,11 +120,10 @@
       letter-spacing: 1px;
       cursor: pointer;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.4s ease-in-out;
       z-index: 1;
-      box-shadow: 0 4px 15px rgba(5, 18, 154, 0.2);
-      backdrop-filter: blur(5px);
-      background-color: rgba(206, 44, 152, 0.5);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+      backdrop-filter: blur(6px);
     }
 
     .btn::before {
@@ -116,7 +136,7 @@
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       z-index: -1;
       clip-path: circle(0% at 50% 50%);
-      transition: clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+      transition: clip-path 0.6s ease-in-out;
     }
 
     .btn:hover::before {
@@ -124,9 +144,9 @@
     }
 
     .btn:hover {
-      color: var(--secondary);
+      color: #000;
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 230, 184, 0.3);
+      box-shadow: 0 0 25px gold;
     }
 
     .footer {
@@ -152,7 +172,7 @@
 </head>
 <body>
   <div class="container">
-    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="gold" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
     </svg>
     <h1>ᴊᴇᴘʜᴛᴇʀ ᴛᴇᴄʜ Tools</h1>
@@ -165,28 +185,15 @@
       <button onclick="window.open('/pair', '_self')" class="btn">
         <i class="fas fa-link"></i> Pair Code
       </button>
-      <button onclick="window.open('https://github.com/MRABDUL13', '_blank')" class="btn">
+      <button onclick="window.open('https://github.com/Jeffreyfx1', '_blank')" class="btn">
         <i class="fab fa-github"></i> GitHub
       </button>
-      <button onclick="window.open('https://whatsapp.com/channel/0029VbBiO8PEKyZ9i8Skkc3C', '_blank')" class="btn">
+      <button onclick="window.open('https://whatsapp.com/channel/0029VbAxkJl0lwgqAOojKI3R', '_blank')" class="btn">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </button>
     </div>
     
     <p class="footer">© 2025-2099 ᴊᴇᴘʜᴛᴇʀ ᴛᴇᴄʜ. All rights reserved.</p>
   </div>
-
-  <script>
-    // Smooth hover effect enhancement
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        btn.style.setProperty('--mouse-x', `${x}px`);
-        btn.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
-  </script>
 </body>
 </html>

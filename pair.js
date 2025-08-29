@@ -153,8 +153,10 @@ ${sid}
 3. Press the *Download* button to get *creds.json*.
 4. After download, locate the file on your device.
 5. Move *creds.json* into your bot’s *sessions* folder.
-6. Now start/host your bot — 
-it will auto-login with the session.
+6. Now start/host your bot —
+7. It will auto-login with the session.
+8. Make sure you rename the file to *creds.json*
+9. Any other questions? +2349046157539
 _____________________________
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴊᴇᴘʜᴛᴇʀ ᴛᴇᴄʜ
 `;
